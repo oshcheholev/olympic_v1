@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}News List{% endblock %}
+
+{% block content %}
+  <h1 class="text-2xl font-bold mb-4">News List</h1>
+  <ul>
+    {% for article in news %}
+      <li class="mb-2">
+#        <a href="{% url 'news_detail' article.id %}" class="text-blue-500 hover:underline">
+          {{ article.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

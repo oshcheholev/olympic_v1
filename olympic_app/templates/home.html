@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="hero-section">
+	<div class="hero-content">
+		<h1 class="hero-title">Welcome to TTC Olympic</h1>
+		<p class="hero-subtitle">Experience the thrill of table tennis excellence</p>
+		<a href="{% url 'player_list' %}" class="hero-button">Become a member</a>
+
+		<div class="records">
+			<div class="record_section">
+				<img src="{% static 'images/players.png' %}" alt="Players" class="record_image">
+				<div class="record_text">100+ Players</div>
+			</div>
+			<div class="record_section">
+				<img src="{% static 'images/awards.png' %}" alt="Awards" class="record_image">
+				<div class="record_text">Trainings in 6 Bezirken</div>
+			</div>
+			<div class="record_section">
+				<img src="{% static 'images/tournaments.png' %}" alt="Tournaments" class="record_image">
+				<div class="record_text">The only Vienna Club in Austrian Bundesliga</div>
+			</div>
+			<div class="record_section">
+				<img src="{% static 'images/records.png' %}" alt="Records" class="record_image">
+				<div class="record_text">12 Teams in VTTA and OEVB</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

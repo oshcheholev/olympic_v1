@@ -1,0 +1,254 @@
+body {
+  background-color: #1a202c;
+  color: #cbd5e0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+header {
+  background-color: #2d3748;
+  padding: 20px;
+  text-align: center;
+}
+header h1 {
+  color: #f7fafc;
+  font-size: 2.5em;
+  margin: 0;
+}
+nav {
+  margin: 20px 0;
+}
+nav a {
+  color: #63b3ed;
+  text-decoration: none;
+  margin: 0 15px;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+footer {
+  background-color: #2d3748;
+  color: #cbd5e0;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.container {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Hero Section Styles */
+.hero-section {
+	position: relative;
+	height: 100vh;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/tennisbat.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin: -2rem -1rem 0 -1rem; /* Compensate for container padding */
+}
+
+.hero-content {
+	color: white;
+	z-index: 2;
+	max-width: 800px;
+	padding: 2rem;
+}
+
+.hero-title {
+	font-size: 4rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+	animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+	animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-button {
+	display: inline-block;
+	background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+	color: white;
+	padding: 1rem 2rem;
+	border-radius: 50px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.1rem;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+	animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+	background: linear-gradient(45deg, #1d4ed8, #1e40af);
+}
+
+/* Records Section Styling */
+.records {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.record_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Odd items - Blue gradient */
+.record_section:nth-child(odd) {
+    background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.5) 0%, 
+        rgba(37, 99, 235, 0.3) 100%);
+}
+
+/* Even items - Purple gradient */
+.record_section:nth-child(even) {
+    background: linear-gradient(135deg, 
+        rgba(147, 51, 234, 0.5) 0%, 
+        rgba(126, 34, 206, 0.3) 100%);
+}
+
+/* Hover effects */
+.record_section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.record_section:nth-child(odd):hover {
+    background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.7) 0%, 
+        rgba(37, 99, 235, 0.5) 100%);
+}
+
+.record_section:nth-child(even):hover {
+    background: linear-gradient(135deg, 
+        rgba(147, 51, 234, 0.7) 0%, 
+        rgba(126, 34, 206, 0.5) 100%);
+}
+
+/* Record image styling */
+.record_image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.record_section:hover .record_image {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Record text styling */
+.record_text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive design for records */
+@media (max-width: 768px) {
+    .records {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        padding: 0 1rem;
+        margin-top: 2rem;
+    }
+    
+    .record_section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .record_image {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+    
+    .record_text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .records {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    
+    .record_section {
+        padding: 1rem 0.5rem;
+    }
+    
+    .record_image {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .record_text {
+        font-size: 0.9rem;
+    }
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Hide header margin on hero page */
+body .container {
+	padding: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+	.hero-title {
+		font-size: 2.5rem;
+	}
+	
+	.hero-subtitle {
+		font-size: 1.2rem;
+	}
+	
+	.hero-section {
+		background-attachment: scroll;
+	}
+}

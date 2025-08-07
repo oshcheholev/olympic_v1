@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{% block title %}TTC Olympic{% endblock %}</title>
+	{% block extra_css %}
+	  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+	{% endblock %}
+	{% block extra_js %}
+	  <script src="{% static 'js/script.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}" />
+    {% endblock %}
+  </head>
+  <body class="bg-gray-900 text-gray-100 min-h-screen">
+    <header class="mx-auto bg-gray-800 shadow-lg mb-8 py-4">
+      <div class="container mx-auto px-4 py-6">
+		  <img src="{% static 'img/logo.png' %}" alt="TTC Olympic Logo" class="inline-block h-10 mr-4">
+		  <a href="{% url 'home' %}" class="text-white text-2xl font-bold">TTC Olympic</a>
+		  <nav>
+				<a href="{% url 'news_list' %}" class="text-gray-300 hover:text-white">News</a>
+				<a href="{% url 'player_list' %}" class="text-gray-300 hover:text-white">Players</a>
+				<a href="{% url 'about' %}" class="text-gray-300 hover:text-white">About</a>
+				<a href="{% url 'contact' %}" class="text-gray-300 hover:text-white">Contact</a>
+			</nav>
+      </div>
+    </header>
+    <main class="container mx-auto px-4">
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>
